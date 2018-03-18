@@ -1,5 +1,5 @@
-const canvas_width = 800;
-const canvas_heigth = 800;
+const canvas_width = 600;
+const canvas_heigth = 600;
 const board_size = 8;
 const GRAY = 170;
 const BLACK = 0;
@@ -13,6 +13,7 @@ function setup() {
   noFill();
   noStroke();
   chess_board = new ChessBoard(offset / 2, canvas_width, canvas_heigth, board_size);
+  population_list = new PopulationList(canvas_width, canvas_heigth, offset);
 }
 
 function draw() {
