@@ -7,6 +7,8 @@ const WHITE = 255;
 const offset = 20;
 
 var chess_board;
+var population_list;
+var gs_settings;
 var isRunning = true;
 
 const list = [
@@ -42,6 +44,7 @@ function setup() {
   noStroke();
   chess_board = new ChessBoard(offset / 2, canvas_width, canvas_heigth, board_size);
   population_list = new PopulationList(canvas_width, canvas_heigth, offset);
+  ga_settings = new GASettings(canvas_width, canvas_heigth, offset);
 }
 
 function draw() {
