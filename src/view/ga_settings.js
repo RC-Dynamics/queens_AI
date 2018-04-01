@@ -112,8 +112,66 @@ class GASettings {
         this.crossover_rate = createDiv('');
         this.crossover_rate.parent(this.crossover);
 
-        // this.crossover_rate_label = createElement('h4', 'Crossover Rate:');
-        // this.crossover_rate_label.parent(this.crossover_rate);
+        this.crossover_rate_label = createElement('h4', 'Crossover Rate:');
+        this.crossover_rate_label.parent(this.crossover_rate);
+
+        this.crossover_rate_input = createInput('0.9');
+        this.crossover_rate_input.parent(this.crossover_rate);
+        this.crossover_rate_input.attribute('type', 'number');
+        this.crossover_rate_input.attribute('step', '0.1');
+        this.crossover_rate_input.attribute('min', '0');
+        this.crossover_rate_input.attribute('max', '1');
+        this.crossover_rate_input.addClass('form-control');
+
+        // Mutation
+        this.mutation = createDiv('');
+        this.mutation.parent(this.div);
+
+        this.mutation_label = createElement('h3', 'Mutation:');
+        this.mutation_label.parent(this.mutation);
+
+        this.mutation_method = createDiv('');
+        this.mutation_method.parent(this.mutation);
+
+        this.mutation_method_label = createElement('h4', 'Mutation Method:');
+        this.mutation_method_label.parent(this.mutation_method);
+
+        this.mutation_select = createSelect();
+        this.mutation_select.addClass('form-control');
+        this.mutation_select.addClass('select-info');
+        this.mutation_select.id('mutation-select');
+        this.mutation_select.attribute('size', '2');
+        this.mutation_select.parent(this.mutation_method);
+        this.mutation_select.option('Gene Swapping');
+
+        this.mutation_rate = createDiv('');
+        this.mutation_rate.parent(this.mutation);
+
+        this.mutation_rate_label = createElement('h4', 'Mutation Rate:');
+        this.mutation_rate_label.parent(this.mutation_rate);
+
+        this.mutation_rate_input = createInput('0.4');
+        this.mutation_rate_input.parent(this.mutation_rate);
+        this.mutation_rate_input.attribute('type', 'number');
+        this.mutation_rate_input.attribute('step', '0.1');
+        this.mutation_rate_input.attribute('min', '0');
+        this.mutation_rate_input.attribute('max', '1');
+        this.mutation_rate_input.addClass('form-control');
+
+        // Parent Selection
+        this.parent_selection = createDiv('');
+        this.parent_selection.parent(this.div);
+
+        this.parent_selection_label = createElement('h3', 'Parent Selection:');
+        this.parent_selection_label.parent(this.parent_selection);
+
+        this.parent_selection_select = createSelect();
+        this.parent_selection_select.addClass('form-control');
+        this.parent_selection_select.addClass('select-info');
+        this.parent_selection_select.id('parent_selection-select');
+        this.parent_selection_select.attribute('size', '2');
+        this.parent_selection_select.parent(this.parent_selection);
+        this.parent_selection_select.option('2 best of 5 random');
 
     }
 }
