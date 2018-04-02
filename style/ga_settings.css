@@ -16,15 +16,29 @@
     font-weight: bold;
 }
 
+h1 {
+    text-align: center;
+}
+
 h3{
     margin-top: 10px;
     display: inline-block;
 }
 
 h4{
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 .select-info{
     font-size: 15px;
+}
+
+.div-col {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    width: 50%;
+}
+
+.configuration {
+    min-width: 600px;    
 }

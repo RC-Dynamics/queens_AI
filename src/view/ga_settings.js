@@ -9,11 +9,21 @@ class GASettings {
         this.label = createElement('h1', 'Algorithm Settings');
         this.label.parent(this.div);
 
+        // Left collumn
+        this.left_col = createDiv('');
+        this.left_col.parent(this.div);
+        this.left_col.addClass('div-col');
+        
+        // Right collumn
+        this.right_col = createDiv('');
+        this.right_col.parent(this.div);
+        this.right_col.addClass('div-col');
+        
         // Play and restart button
         this.control_buttons = createDiv('');
         this.control_buttons.addClass('btn-group');
         this.control_buttons.addClass('button-config');
-        this.control_buttons.parent(this.div);
+        this.control_buttons.parent(this.left_col);
         
         this.playButton = createButton('');
         this.playButton.addClass('btn');
@@ -39,7 +49,7 @@ class GASettings {
 
         // Board size
         this.board_size = createDiv('');
-        this.board_size.parent(this.div);
+        this.board_size.parent(this.left_col);
 
         this.board_size_label = createElement('h3', 'Board Size:');
         this.board_size_label.parent(this.board_size);
@@ -75,7 +85,7 @@ class GASettings {
 
         // Genotype Enconding
         this.enconding = createDiv('');
-        this.enconding.parent(this.div);
+        this.enconding.parent(this.left_col);
 
         this.enconding_label = createElement('h3', 'Genotype Enconding:');
         this.enconding_label.parent(this.enconding);
@@ -90,7 +100,7 @@ class GASettings {
 
         // Crossover
         this.crossover = createDiv('');
-        this.crossover.parent(this.div);
+        this.crossover.parent(this.left_col);
 
         this.crossover_label = createElement('h3', 'Crossover:');
         this.crossover_label.parent(this.crossover);
@@ -125,7 +135,7 @@ class GASettings {
 
         // Mutation
         this.mutation = createDiv('');
-        this.mutation.parent(this.div);
+        this.mutation.parent(this.left_col);
 
         this.mutation_label = createElement('h3', 'Mutation:');
         this.mutation_label.parent(this.mutation);
@@ -160,7 +170,7 @@ class GASettings {
 
         // Parent Selection
         this.parent_selection = createDiv('');
-        this.parent_selection.parent(this.div);
+        this.parent_selection.parent(this.left_col);
 
         this.parent_selection_label = createElement('h3', 'Parent Selection:');
         this.parent_selection_label.parent(this.parent_selection);
@@ -172,6 +182,98 @@ class GASettings {
         this.parent_selection_select.attribute('size', '2');
         this.parent_selection_select.parent(this.parent_selection);
         this.parent_selection_select.option('2 best of 5 random');
+
+        // Selction Method
+        this.selection = createDiv('');
+        this.selection.parent(this.right_col);
+
+        this.selection_label = createElement('h3', 'Selection:');
+        this.selection_label.parent(this.selection);
+
+        this.selection_select = createSelect();
+        this.selection_select.addClass('form-control');
+        this.selection_select.addClass('select-info');
+        this.selection_select.id('selection-select');
+        this.selection_select.attribute('size', '2');
+        this.selection_select.parent(this.selection);
+        this.selection_select.option('Best Fitness');
+
+        // Population size
+        this.population = createDiv('');
+        this.population.parent(this.right_col);
+
+        this.population_label = createElement('h3', 'Population Size:');
+        this.population_label.parent(this.population);
+
+        this.population_size_input = createInput('100');
+        this.population_size_input.parent(this.population);
+        this.population_size_input.attribute('type', 'number');
+        this.population_size_input.attribute('step', '10');
+        this.population_size_input.attribute('min', '0');
+        this.population_size_input.attribute('max', '100000');
+        this.population_size_input.addClass('form-control');
+
+        // Number of children
+        this.children = createDiv('');
+        this.children.parent(this.right_col);
+
+        this.children_label = createElement('h3', 'Number of children:');
+        this.children_label.parent(this.children);
+
+        this.children_size_input = createInput('2');
+        this.children_size_input.parent(this.children);
+        this.children_size_input.attribute('type', 'number');
+        this.children_size_input.attribute('step', '1');
+        this.children_size_input.attribute('min', '0');
+        this.children_size_input.attribute('max', '10');
+        this.children_size_input.addClass('form-control');
+
+        // Initialization
+        this.initialization = createDiv('');
+        this.initialization.parent(this.right_col);
+
+        this.initialization_label = createElement('h3', 'Initialization:');
+        this.initialization_label.parent(this.initialization);
+
+        this.initialization_select = createSelect();
+        this.initialization_select.addClass('form-control');
+        this.initialization_select.addClass('select-info');
+        this.initialization_select.id('initialization-select');
+        this.initialization_select.attribute('size', '2');
+        this.initialization_select.parent(this.initialization);
+        this.initialization_select.option('Random');
+
+        // Termination Method
+        this.termination = createDiv('');
+        this.termination.parent(this.right_col);
+
+        this.termination_label = createElement('h3', 'Termination Method:');
+        this.termination_label.parent(this.termination);
+
+        this.termination_select = createSelect();
+        this.termination_select.addClass('form-control');
+        this.termination_select.addClass('select-info');
+        this.termination_select.id('termination-select');
+        this.termination_select.attribute('size', '2');
+        this.termination_select.parent(this.termination);
+        this.termination_select.option('Find the Solution');
+        this.termination_select.option('10.000 Fitness evaluation');
+
+        // Fitness Function
+        this.fitnes = createDiv('');
+        this.fitnes.parent(this.right_col);
+
+        this.fitnes_label = createElement('h3', 'Fitness Function:');
+        this.fitnes_label.parent(this.fitnes);
+
+        this.fitnes_select = createSelect();
+        this.fitnes_select.addClass('form-control');
+        this.fitnes_select.addClass('select-info');
+        this.fitnes_select.id('fitnes-select');
+        this.fitnes_select.attribute('size', '2');
+        this.fitnes_select.parent(this.fitnes);
+        this.fitnes_select.option('Inverse of number of clashes');
+
 
     }
 }
