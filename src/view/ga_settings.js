@@ -57,6 +57,7 @@ class GASettings {
         this.board_size_buttons = createDiv('');
         this.board_size_buttons.addClass('button-config');
         this.board_size_buttons.addClass('btn-group');
+        this.board_size_buttons.id('board_size');
         this.board_size_buttons.parent(this.board_size);
 
         this.eight = createButton('8');
@@ -97,6 +98,7 @@ class GASettings {
         this.enconding_select.attribute('size', '2');
         this.enconding_select.parent(this.enconding);
         this.enconding_select.option('Permutation - Binary representation');
+        $('#enconding-select').val(($('#enconding-select option:first').val()));
 
         // Crossover
         this.crossover = createDiv('');
@@ -118,6 +120,7 @@ class GASettings {
         this.crossover_select.attribute('size', '2');
         this.crossover_select.parent(this.crossover_method);
         this.crossover_select.option('Cut-and-crossfill');
+        $('#crossover-select').val(($('#crossover-select option:first').val()));
         
         this.crossover_rate = createDiv('');
         this.crossover_rate.parent(this.crossover);
@@ -153,6 +156,7 @@ class GASettings {
         this.mutation_select.attribute('size', '2');
         this.mutation_select.parent(this.mutation_method);
         this.mutation_select.option('Gene Swapping');
+        $('#mutation-select').val(($('#mutation-select option:first').val()));
 
         this.mutation_rate = createDiv('');
         this.mutation_rate.parent(this.mutation);
@@ -182,6 +186,7 @@ class GASettings {
         this.parent_selection_select.attribute('size', '2');
         this.parent_selection_select.parent(this.parent_selection);
         this.parent_selection_select.option('2 best of 5 random');
+        $('#parent_selection-select').val(($('#parent_selection-select option:first').val()));
 
         // Selction Method
         this.selection = createDiv('');
@@ -197,6 +202,7 @@ class GASettings {
         this.selection_select.attribute('size', '2');
         this.selection_select.parent(this.selection);
         this.selection_select.option('Best Fitness');
+        $('#selection-select').val(($('#selection-select option:first').val()));
 
         // Population size
         this.population = createDiv('');
@@ -242,6 +248,7 @@ class GASettings {
         this.initialization_select.attribute('size', '2');
         this.initialization_select.parent(this.initialization);
         this.initialization_select.option('Random');
+        $('#initialization-select').val(($('#initialization-select option:first').val()));
 
         // Termination Method
         this.termination = createDiv('');
@@ -256,8 +263,9 @@ class GASettings {
         this.termination_select.id('termination-select');
         this.termination_select.attribute('size', '2');
         this.termination_select.parent(this.termination);
-        this.termination_select.option('Find the Solution');
         this.termination_select.option('10.000 Fitness evaluation');
+        this.termination_select.option('Find the Solution');
+        $('#termination-select').val(($('#termination-select option:first').val()));
 
         // Fitness Function
         this.fitnes = createDiv('');
@@ -273,6 +281,7 @@ class GASettings {
         this.fitnes_select.attribute('size', '2');
         this.fitnes_select.parent(this.fitnes);
         this.fitnes_select.option('Inverse of number of clashes');
+        $('#fitnes-select').val(($('#fitnes-select option:first').val()));
 
 
     }

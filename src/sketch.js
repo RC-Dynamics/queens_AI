@@ -1,6 +1,8 @@
 const canvas_width = 600;
 const canvas_heigth = 600;
-const board_size = 8;
+const board = {
+  size: 8
+};
 const GRAY = 170;
 const BLACK = 0;
 const WHITE = 255;
@@ -42,14 +44,18 @@ function setup() {
   createCanvas(canvas_width + offset, canvas_heigth + offset);
   noFill();
   noStroke();
-  chess_board = new ChessBoard(offset / 2, canvas_width, canvas_heigth, board_size);
+  chess_board = new ChessBoard(offset / 2, canvas_width, canvas_heigth, board.size);
   population_list = new PopulationList(canvas_width, canvas_heigth, offset);
   ga_settings = new GASettings(canvas_width, canvas_heigth, offset);
+
+  $('#board_size button').click(function () {
+    board.size = parseInt($(this).text());
+  });
 }
 
 function draw() {
   background(127, 0, 0, 255);
-  chess_board.draw(board_size);
+  chess_board.draw(board.size);
   population_list.insert_population(list, isRunning);
   chess_board.insert_queens(population_list.get_selected());
 
