@@ -5,6 +5,4 @@ The 8 Queens problems resolved with evolutionary algorithms.
 
 2 - `browser-sync start --server -f`
 
-or
-
-`https://github.com/processing/p5.js/wiki/Local-server`
+or [Running a local server](https://github.com/processing/p5.js/wiki/Local-server)
