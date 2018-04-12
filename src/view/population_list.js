@@ -33,10 +33,18 @@ class PopulationList{
         text = text.split('[')[1].split(']')[0];
 
         var positions = text.split(',');
-        positions = positions.map((elem) => {
+        positions = positions.map(function(elem) {
             return parseInt(elem);
         });
 
         return positions;
+    }
+
+    disable_changes(){
+        $('#population-select').prop('disabled', true);
+    }
+
+    enable_changes() {
+        $('#population-select').prop('disabled', false);
     }
 }

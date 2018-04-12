@@ -23,6 +23,7 @@ class GASettings {
         this.control_buttons = createDiv('');
         this.control_buttons.addClass('btn-group');
         this.control_buttons.addClass('button-config');
+        this.control_buttons.id('control-buttons');
         this.control_buttons.parent(this.left_col);
         
         this.playButton = createButton('');
@@ -37,16 +38,17 @@ class GASettings {
         this.playButtonIcon.addClass('glyphicon-play');
         this.playButtonIcon.parent(this.playButton);
 
-        // this.restartButton = createButton('');
-        // this.restartButton.addClass('btn-lg');
-        // this.restartButton.addClass('btn');
-        // this.restartButton.addClass('btn-default');
-        // this.restartButton.parent(this.control_buttons);
+        this.restartButton = createButton('');
+        this.restartButton.addClass('btn-lg');
+        this.restartButton.addClass('btn');
+        this.restartButton.addClass('btn-default');
+        this.restartButton.id('restart_button');
+        this.restartButton.parent(this.control_buttons);
 
-        // this.restartButtonIcon = createSpan('');
-        // this.restartButtonIcon.addClass('glyphicon');
-        // this.restartButtonIcon.addClass('glyphicon-repeat');
-        // this.restartButtonIcon.parent(this.restartButton);
+        this.restartButtonIcon = createSpan('');
+        this.restartButtonIcon.addClass('glyphicon');
+        this.restartButtonIcon.addClass('glyphicon-repeat');
+        this.restartButtonIcon.parent(this.restartButton);
 
         // Board size
         this.board_size = createDiv('');
@@ -306,5 +308,39 @@ class GASettings {
             termination_method: $('#termination-select').val(),
             fitness: $('#fitnes-select').val()
         };
+    }
+
+    disable_changes() {
+        $('#enconding-select').prop('disabled', true);
+        $('#crossover-select').prop('disabled', true);
+        $('#crossover-rate').prop('disabled', true);
+        $('#mutation-select').prop('disabled', true);
+        $('#mutation-rate').prop('disabled', true);
+        $('#parent_selection-select').prop('disabled', true);
+        $('#selection-select').prop('disabled', true);
+        $('#population-size').prop('disabled', true);
+        $('#number-children').prop('disabled', true);
+        $('#initialization-select').prop('disabled', true);
+        $('#termination-select').prop('disabled', true);
+        $('#fitnes-select').prop('disabled', true);
+        $('#board_size button').prop('disabled', true);
+        $('#control-buttons button').prop('disabled', true);
+    }
+
+    enable_changes() {
+        $('#enconding-select').prop('disabled', false);
+        $('#crossover-select').prop('disabled', false);
+        $('#crossover-rate').prop('disabled', false);
+        $('#mutation-select').prop('disabled', false);
+        $('#mutation-rate').prop('disabled', false);
+        $('#parent_selection-select').prop('disabled', false);
+        $('#selection-select').prop('disabled', false);
+        $('#population-size').prop('disabled', false);
+        $('#number-children').prop('disabled', false);
+        $('#initialization-select').prop('disabled', false);
+        $('#termination-select').prop('disabled', false);
+        $('#fitnes-select').prop('disabled', false);
+        $('#board_size button').prop('disabled', false);
+        $('#control-buttons button').prop('disabled', false);
     }
 }

@@ -48,12 +48,24 @@ function setup() {
   population_list = new PopulationList(canvas_width, canvas_heigth, offset);
   ga_settings = new GASettings(canvas_width, canvas_heigth, offset);
 
+  // Change board size
   $('#board_size button').click(function () {
     config.board_size = parseInt($(this).text());
   });
 
-  $('#play_button').click(() => {
+  // Play button pressed
+  $('#play_button').click(function() {
     config.ga_settings = ga_settings.get_config();
+    population_list.disable_changes();
+    ga_settings.disable_changes();
+    isRunning = true;
+  });
+  
+  // Restart button pressed
+  // It will recalculate a new population
+  $('#restart_button').click(function() {
+    // TODO
+    // Initialize a new population
   });
   
   // TODO
@@ -67,5 +79,20 @@ function draw() {
   background(127, 0, 0, 255);
   chess_board.draw(config.board_size);
   chess_board.insert_queens(population_list.get_selected());
+
+  if (isRunning){
+    // TODO
+    // Parent Selection
+    // Crossover
+    // Mutation
+    // Evaluate Fitness
+    // Selection
+    // Evaluate termination method
+
+    // When find a solution, run this code to enable changes
+    // population_list.enable_changes();
+    // ga_settings.enable_changes();
+    // isRunning = false;
+  }
 
 }
