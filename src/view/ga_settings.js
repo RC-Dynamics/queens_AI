@@ -29,6 +29,7 @@ class GASettings {
         this.playButton.addClass('btn');
         this.playButton.addClass('btn-lg');
         this.playButton.addClass('btn-default');
+        this.playButton.id('play_button');
         this.playButton.parent(this.control_buttons);
 
         this.playButtonIcon = createSpan('');
@@ -36,16 +37,16 @@ class GASettings {
         this.playButtonIcon.addClass('glyphicon-play');
         this.playButtonIcon.parent(this.playButton);
 
-        this.restartButton = createButton('');
-        this.restartButton.addClass('btn-lg');
-        this.restartButton.addClass('btn');
-        this.restartButton.addClass('btn-default');
-        this.restartButton.parent(this.control_buttons);
+        // this.restartButton = createButton('');
+        // this.restartButton.addClass('btn-lg');
+        // this.restartButton.addClass('btn');
+        // this.restartButton.addClass('btn-default');
+        // this.restartButton.parent(this.control_buttons);
 
-        this.restartButtonIcon = createSpan('');
-        this.restartButtonIcon.addClass('glyphicon');
-        this.restartButtonIcon.addClass('glyphicon-repeat');
-        this.restartButtonIcon.parent(this.restartButton);
+        // this.restartButtonIcon = createSpan('');
+        // this.restartButtonIcon.addClass('glyphicon');
+        // this.restartButtonIcon.addClass('glyphicon-repeat');
+        // this.restartButtonIcon.parent(this.restartButton);
 
         // Board size
         this.board_size = createDiv('');
@@ -131,9 +132,10 @@ class GASettings {
         this.crossover_rate_input = createInput('0.9');
         this.crossover_rate_input.parent(this.crossover_rate);
         this.crossover_rate_input.attribute('type', 'number');
-        this.crossover_rate_input.attribute('step', '0.1');
+        this.crossover_rate_input.attribute('step', '0.05');
         this.crossover_rate_input.attribute('min', '0');
         this.crossover_rate_input.attribute('max', '1');
+        this.crossover_rate_input.id('crossover-rate');
         this.crossover_rate_input.addClass('form-control');
 
         // Mutation
@@ -164,12 +166,13 @@ class GASettings {
         this.mutation_rate_label = createElement('h4', 'Mutation Rate:');
         this.mutation_rate_label.parent(this.mutation_rate);
 
-        this.mutation_rate_input = createInput('0.4');
+        this.mutation_rate_input = createInput('0.3');
         this.mutation_rate_input.parent(this.mutation_rate);
         this.mutation_rate_input.attribute('type', 'number');
-        this.mutation_rate_input.attribute('step', '0.1');
+        this.mutation_rate_input.attribute('step', '0.05');
         this.mutation_rate_input.attribute('min', '0');
         this.mutation_rate_input.attribute('max', '1');
+        this.mutation_rate_input.id('mutation-rate');
         this.mutation_rate_input.addClass('form-control');
 
         // Parent Selection
@@ -218,6 +221,7 @@ class GASettings {
         this.population_size_input.attribute('min', '0');
         this.population_size_input.attribute('max', '100000');
         this.population_size_input.addClass('form-control');
+        this.population_size_input.id('population-size');
 
         // Number of children
         this.children = createDiv('');
@@ -233,6 +237,7 @@ class GASettings {
         this.children_size_input.attribute('min', '0');
         this.children_size_input.attribute('max', '10');
         this.children_size_input.addClass('form-control');
+        this.children_size_input.id('number-children');
 
         // Initialization
         this.initialization = createDiv('');
@@ -284,5 +289,22 @@ class GASettings {
         $('#fitnes-select').val(($('#fitnes-select option:first').val()));
 
 
+    }
+
+    get_config() {
+        return {
+            genotype_enconding: $('#enconding-select').val(),
+            crossover_method: $('#crossover-select').val(),
+            crossover_rate: parseFloat($('#crossover-rate').val()),
+            mutation_method: $('#mutation-select').val(),
+            mutation_rate: parseFloat($('#mutation-rate').val()),
+            parent_selection: $('#parent_selection-select').val(),
+            selection: $('#selection-select').val(),
+            population_size: parseInt($('#population-size').val()),
+            number_of_children: parseInt($('#number-children').val()),
+            initialization: $('#initialization-select').val(),
+            termination_method: $('#termination-select').val(),
+            fitness: $('#fitnes-select').val()
+        };
     }
 }
