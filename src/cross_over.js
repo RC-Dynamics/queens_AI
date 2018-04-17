@@ -1,8 +1,8 @@
-  var pai1 = "001000011101111101011010";
-  var pai2 = "000010111001011110101100";
-  var pai3 = "000000000000000000000000";
-  var pai4 = "111111111111111111111111";
-  var pai5 = "000001010011100101110111";
+  var father1 = "001000011101111101011010";
+  var father2 = "000010111001011110101100";
+  var father3 = "000000000000000000000000";
+  var father4 = "111111111111111111111111";
+  var father5 = "000001010011100101110111";
 
   function haveGene(genotype, gene)
 {
@@ -17,18 +17,18 @@
 }
 
 
-function cut_and_crossfill(pai1, pai2)
+function cut_and_crossfill(father1, father2)
 {
-	var len = pai1.length;
+	var len = father1.length;
 	var bytesPerGene = 3;
 	var numberOfGenes = len/bytesPerGene;
 	var rIndex = Math.floor((Math.random() * numberOfGenes))*bytesPerGene; 
 	
-	var son1 = pai1.substring(0, rIndex);
-	var son2 = pai2.substring(0, rIndex);
+	var son1 = father1.substring(0, rIndex);
+	var son2 = father2.substring(0, rIndex);
 	for (var i = rIndex; i < len ; i+=bytesPerGene) 	  
 	{
-		var gene = pai2.substring(i, i + bytesPerGene);
+		var gene = father2.substring(i, i + bytesPerGene);
 		if(!haveGene(son1, gene) && son1.length < len )
 		{
 			son1 += gene;
@@ -40,7 +40,7 @@ function cut_and_crossfill(pai1, pai2)
 	}
 	for (var i = 0; i < rIndex; i+=bytesPerGene) 
 	{
-		var gene = pai2.substring(i, i + bytesPerGene);
+		var gene = father2.substring(i, i + bytesPerGene);
 		if(!haveGene(son1, gene) && son1.length < len )
 		{
 			son1 += gene;
