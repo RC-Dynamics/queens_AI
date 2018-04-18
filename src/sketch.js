@@ -64,7 +64,7 @@ function draw() {
     // Parent Selection
     parentsIndexes = ga.parent_selection(population, config.board_size, config.ga_settings.parent_selection);
     // Crossover
-    children = ga.crossover(population, parentsIndexes, config.board_size, config.ga_settings.crossover_method, config.ga_settings.crossover_rate);
+    children = ga.crossover(population, parentsIndexes, config.board_size, config.ga_settings.number_of_children, config.ga_settings.crossover_method, config.ga_settings.crossover_rate);
     // Mutation
     ga.mutation(children, config.board_size, config.ga_settings.mutation_method, config.ga_settings.mutation_rate);
     // Evaluate Fitness

@@ -3,6 +3,6 @@ class Fitness {
 
     }
     inverse_clashes(children, board_size){
-
+        
     }
 }

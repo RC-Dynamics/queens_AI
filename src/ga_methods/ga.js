@@ -44,10 +44,10 @@ class GA {
         }
     }
 
-    crossover(population, parentsIndexes, board_size, crossover_method, crossover_rate){
+    crossover(population, parentsIndexes, board_size, number_of_chldren, crossover_method, crossover_rate){
         switch (crossover_method) {
             case _cut_crossfill:
-                return this.crossover_method.cut_and_crossfill(population, parentsIndexes, board_size, crossover_rate);
+                return this.crossover_method.cut_and_crossfill(population, parentsIndexes, number_of_chldren, board_size, crossover_rate);
         }
     }
 
