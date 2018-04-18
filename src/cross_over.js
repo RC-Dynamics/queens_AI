@@ -1,55 +1,58 @@
-  var father1 = "001000011101111101011010";
-  var father2 = "000010111001011110101100";
-  var father3 = "000000000000000000000000";
-  var father4 = "111111111111111111111111";
-  var father5 = "000001010011100101110111";
+var father1 = ['001', '000', '011', '101', '111', '100' ,'110', '010'];
+var father2 = ['000', '010', '111', '001', '011', '110' ,'101', '100'];
+var father3 = ['110', '100', '001', '000', '101', '111', '011', '010'];
+var father4 = ['000', '001', '010', '011', '100', '101' ,'110', '111'];
 
-  function haveGene(genotype, gene)
+
+function haveGene(genotype, gene)
 {
-	for (var i = 0; i < genotype.length; i+=3) {
-		var tempGen = genotype[i]+genotype[i+1]+genotype[i+2];
-		if(tempGen == gene)
+	for (var i = 0; i < genotype.length; i++) {
+		if(genotype[i] == gene)
 		{
 			return true;
 		}
 	}
-	return false;;
+	return false;
 }
 
 
 function cut_and_crossfill(father1, father2)
 {
-	var len = father1.length;
-	var bytesPerGene = 3;
-	var numberOfGenes = len/bytesPerGene;
-	var rIndex = Math.floor((Math.random() * numberOfGenes))*bytesPerGene; 
 	
-	var son1 = father1.substring(0, rIndex);
-	var son2 = father2.substring(0, rIndex);
-	for (var i = rIndex; i < len ; i+=bytesPerGene) 	  
+	var bytesPerGene = father1[0].length;
+	var numberOfGenes = father1.length;
+	var rIndex = Math.floor((Math.random() * numberOfGenes)); 
+	var son1 = father1.slice(0, rIndex);
+	var son2 = father2.slice(0, rIndex);;
+	for (var i = rIndex; i < numberOfGenes ; i++) 	  
 	{
-		var gene = father2.substring(i, i + bytesPerGene);
-		if(!haveGene(son1, gene) && son1.length < len )
+		var gene1 = father1[i];
+		var gene2 = father2[i];
+		if(!haveGene(son1, gene2) && son1.length < numberOfGenes )
 		{
-			son1 += gene;
+			son1[son1.length] = gene2;
 		} 
-		if(!haveGene(son2, gene) && son2.length < len )
+		if(!haveGene(son2, gene1) && son2.length < numberOfGenes )
 		{
-			son2 += gene;
+			son2[son2.length] = gene1;
 		} 
+
 	}
-	for (var i = 0; i < rIndex; i+=bytesPerGene) 
+	for (var i = 0; i < rIndex ; i++) 	  
 	{
-		var gene = father2.substring(i, i + bytesPerGene);
-		if(!haveGene(son1, gene) && son1.length < len )
+		var gene1 = father1[i];
+		var gene2 = father2[i];
+		if(!haveGene(son1, gene2) && son1.length < numberOfGenes )
 		{
-			son1 += gene;
+			son1[son1.length] = gene2;
 		} 
-		if(!haveGene(son2, gene) && son2.length < len )
+		if(!haveGene(son2, gene1) && son2.length < numberOfGenes )
 		{
-			son2 += gene;
+			son2[son2.length] = gene1;
 		} 
+
 	}
+
 
 	return [son1, son2];
 }
