@@ -122,7 +122,7 @@ class GASettings {
         this.crossover_select.id('crossover-select');
         this.crossover_select.attribute('size', '2');
         this.crossover_select.parent(this.crossover_method);
-        this.crossover_select.option('Cut-and-crossfill');
+        this.crossover_select.option(_cut_crossfill);
         $('#crossover-select').val(($('#crossover-select option:first').val()));
         
         this.crossover_rate = createDiv('');
@@ -159,7 +159,7 @@ class GASettings {
         this.mutation_select.id('mutation-select');
         this.mutation_select.attribute('size', '2');
         this.mutation_select.parent(this.mutation_method);
-        this.mutation_select.option('Gene Swapping');
+        this.mutation_select.option(_gene_swap);
         $('#mutation-select').val(($('#mutation-select option:first').val()));
 
         this.mutation_rate = createDiv('');
@@ -190,7 +190,7 @@ class GASettings {
         this.parent_selection_select.id('parent_selection-select');
         this.parent_selection_select.attribute('size', '2');
         this.parent_selection_select.parent(this.parent_selection);
-        this.parent_selection_select.option('2 best of 5 random');
+        this.parent_selection_select.option(_two_of_five);
         $('#parent_selection-select').val(($('#parent_selection-select option:first').val()));
 
         // Selction Method
@@ -206,7 +206,7 @@ class GASettings {
         this.selection_select.id('selection-select');
         this.selection_select.attribute('size', '2');
         this.selection_select.parent(this.selection);
-        this.selection_select.option('Best Fitness');
+        this.selection_select.option(_best_fitness);
         $('#selection-select').val(($('#selection-select option:first').val()));
 
         // Population size
@@ -270,8 +270,8 @@ class GASettings {
         this.termination_select.id('termination-select');
         this.termination_select.attribute('size', '2');
         this.termination_select.parent(this.termination);
-        this.termination_select.option('10.000 Fitness evaluation');
-        this.termination_select.option('Find the Solution');
+        this.termination_select.option(_10000_evaluation);
+        this.termination_select.option(_find_solution);
         $('#termination-select').val(($('#termination-select option:first').val()));
 
         // Fitness Function
@@ -287,7 +287,7 @@ class GASettings {
         this.fitnes_select.id('fitnes-select');
         this.fitnes_select.attribute('size', '2');
         this.fitnes_select.parent(this.fitnes);
-        this.fitnes_select.option('Inverse of number of clashes');
+        this.fitnes_select.option(_inverse_num_clashes);
         $('#fitnes-select').val(($('#fitnes-select option:first').val()));
 
 

@@ -1,44 +1,15 @@
-const canvas_width = 600;
-const canvas_heigth = 600;
-const GRAY = 170;
-const BLACK = 0;
-const WHITE = 255;
-const offset = 20;
-
 var chess_board;
 var population_list;
 var ga_settings;
+var ga;
 var isRunning = true;
 var config = {
   board_size: 8
 }
 
-const list = [
-  {
-    fitness: 10,
-    positions: [2, 4, 4, 6, 8, 6, 3, 2]
-  },
-  {
-    fitness: 11,
-    positions: [1, 2, 3, 4, 5, 6, 7, 8]
-  },
-  {
-    fitness: 10.5,
-    positions: [1, 1, 1, 1, 1, 1, 1, 1]
-  },
-  {
-    fitness: 2,
-    positions: [1, 7, 8, 2, 4, 5, 8, 6]
-  },
-  {
-    fitness: 30,
-    positions: [1, 3, 5, 7, 2, 4, 6, 8]
-  },
-  {
-    fitness: 30,
-    positions: [1, 3, 5, 7, 2, 4, 6, 8]
-  }
-]
+var population;
+var parentsIndexes;
+var children;
 
 function setup() {
   createCanvas(canvas_width + offset, canvas_heigth + offset);
@@ -47,6 +18,7 @@ function setup() {
   chess_board = new ChessBoard(offset / 2, canvas_width, canvas_heigth, config.board_size);
   population_list = new PopulationList(canvas_width, canvas_heigth, offset);
   ga_settings = new GASettings(canvas_width, canvas_heigth, offset);
+  ga = new GA();
 
   // Change board size
   $('#board_size button').click(function () {
@@ -66,12 +38,18 @@ function setup() {
   $('#restart_button').click(function() {
     // TODO
     // Initialize a new population
+    population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
+    ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
   });
+
+  config.ga_settings = ga_settings.get_config();
   
   // TODO
   // Initialize population
+  population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
+  ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
 
-  population_list.insert_population(list, isRunning);
+  population_list.insert_population(population, isRunning);
   isRunning = false;
 }
 
@@ -81,18 +59,24 @@ function draw() {
   chess_board.insert_queens(population_list.get_selected());
 
   if (isRunning){
+    children = [];
     // TODO
     // Parent Selection
+    parentsIndexes = ga.parent_selection(population, config.board_size, config.ga_settings.parent_selection);
     // Crossover
+    children = ga.crossover(population, parentsIndexes, config.board_size, config.ga_settings.crossover_method, config.ga_settings.crossover_rate);
     // Mutation
+    ga.mutation(children, config.board_size, config.ga_settings.mutation_method, config.ga_settings.mutation_rate);
     // Evaluate Fitness
+    ga.evaluate_fitness(children, config.board_size, config.ga_settings.fitness);
     // Selection
+    ga.select_generation(population, children, config.board_size, config.ga_settings.selection);
     // Evaluate termination method
-
-    // When find a solution, run this code to enable changes
-    // population_list.enable_changes();
-    // ga_settings.enable_changes();
-    // isRunning = false;
+    if (ga.evaluate_termination(population, config.board_size, config.ga_settings.termination_method)){
+      population_list.enable_changes();
+      ga_settings.enable_changes();
+      isRunning = false;
+    }
   }
 
 }
