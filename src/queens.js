@@ -31,8 +31,11 @@ function makingPopulation(population_size, n_bits) {
     genomes.push(createBinaryString(i, n_bits));
   }
   for (var i = 0; i < population_size; i++) {
+    var genome = new Object();
     genomes = randomShuffle(genomes);
-    population[i] = genomes.slice();
+    genome.positions = genomes.slice();
+    genome.fitness = getFitness(genomes);
+    population[i] = genome;
   }
   return population;
 }
@@ -50,7 +53,7 @@ function getFitness(genome){
       }
     }
   }
-  return fitness;
+  return 1 / Math.abs(1 - fitness);
 }
 
 function main() {

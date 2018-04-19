@@ -14,3 +14,15 @@ const _inverse_num_clashes = 'Inverse of number of clashes';
 const _best_fitness = 'Best Fitness';
 const _find_solution = 'Find the Solution';
 const _10000_evaluation = '10.000 Fitness evaluation';
+
+function getPosVector(positions) {
+    var pass = [];
+    for(var i = 0; i < positions.length; i++){
+        pass.push(1+getPos(positions, i));
+    }
+    return pass;
+}
+
+function getPos(genome, pos) {
+    return parseInt(genome[pos], 2);
+}
