@@ -22,7 +22,7 @@ class PopulationList{
         if (this.isRunning){
             $('#population-select').empty();
             for(var i = 0; i < population.length; i++){
-                this.select.option(`${i+1}: Fitness: ${population[i].fitness}  - Positions: [${population[i].positions}]`);
+                this.select.option(`${i+1}: Fitness: ${population[i].fitness}  - Positions: [${getPosVector(population[i].positions)}]`);
             }
             $('#population-select').val(($('#population-select option:first').val()));
         }
