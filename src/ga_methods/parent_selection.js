@@ -3,24 +3,24 @@ class ParentSelection {
 
     }
 
-    two_best_of_five(population, board_size){
+    two_best_of_five(population_temp, board_size){
         var parents = [];
         var five_choosen = [];
         for (var j = 0; j < 5; j++) {
-            var index = Math.floor(Math.random() * population.length);
+            var index = Math.floor(Math.random() * population_temp.length);
             five_choosen[j] = {
                 index,
-                genome: population[index]
+                genotype: population_temp[index]
             };
         }
         five_choosen.sort(function (a, b) {
-            return a.genome.fitness < b.genome.fitness;
+            return a.genotype.fitness < b.genotype.fitness;
         });
         parents.push({
             first: five_choosen[0].index,
             second: five_choosen[1].index
         });
-        // console.log(five_choosen);
+        // console.log(five_choosen);   
         // population.sort(function (a, b) {
         //     return a.fitness < b.fitness;
         // });

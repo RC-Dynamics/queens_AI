@@ -23,6 +23,6 @@ function getPosVector(positions) {
     return pass;
 }
 
-function getPos(genome, pos) {
-    return parseInt(genome[pos], 2);
+function getPos(genotype, pos) {
+    return parseInt(genotype[pos], 2);
 }

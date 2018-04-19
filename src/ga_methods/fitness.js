@@ -7,11 +7,11 @@ class Fitness {
             population[i].fitness = this.getFitness(population[i].positions);
         }
     }
-    getFitness(genome){
+    getFitness(genotype){
         var error = 0;
-        for (var i = 0; i < genome.length; i++) {
-            for (var j = i + 1; j < genome.length; j++) {
-                if (Math.abs(getPos(genome, i) - getPos(genome, j)) == j - i) {
+        for (var i = 0; i < genotype.length; i++) {
+            for (var j = i + 1; j < genotype.length; j++) {
+                if (Math.abs(getPos(genotype, i) - getPos(genotype, j)) == j - i) {
                     error++;
                 }
             }

@@ -49,26 +49,6 @@ function setup() {
   // Initialize population
   population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
   ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
-  
-  // TEST BEGIN
-  // Parent Selection
-  parentsIndexes = ga.parent_selection(population, config.board_size, config.ga_settings.parent_selection);
-  // console.log(population[parentsIndexes[0].first], population[parentsIndexes[0].second]);
-  // Crossover
-  children = [];
-  children = ga.crossover(population, parentsIndexes, config.board_size, config.ga_settings.number_of_children, config.ga_settings.crossover_method, config.ga_settings.crossover_rate);
-  // Mutation
-  //console.log(children);
-
-  ga.mutation(children, config.board_size, config.ga_settings.mutation_method, config.ga_settings.mutation_rate);
-  // Evaluate Fitness
-  //console.log(children);
-  ga.evaluate_fitness(children, config.board_size, config.ga_settings.fitness);
-  ga.select_generation(population, children, config.board_size, config.ga_settings.selection);
-
-  console.log(children);
-  // TEST END
-
   population_list.insert_population(population, isRunning);
   isRunning = false;
 }
@@ -92,7 +72,7 @@ function draw() {
     // Selection
     ga.select_generation(population, children, config.board_size, config.ga_settings.selection);
     // Evaluate termination method
-    if (ga.evaluate_termination(population, config.board_size, config.ga_settings.termination_method)){
+    if (ga.evaluate_termination(population, children.length, config.board_size, config.ga_settings.termination_method)){
       population_list.enable_changes();
       ga_settings.enable_changes();
       isRunning = false;

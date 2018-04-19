@@ -17,12 +17,12 @@ class PopulationList{
         this.select.parent(this.div);
     }
 
-    insert_population(population, isRunning){
+    insert_population(population_temp, isRunning){
         this.isRunning = isRunning;
         if (this.isRunning){
             $('#population-select').empty();
-            for(var i = 0; i < population.length; i++){
-                this.select.option(`${i+1}: Fitness: ${population[i].fitness}  - Positions: [${getPosVector(population[i].positions)}]`);
+            for(var i = 0; i < population_temp.length; i++){
+                this.select.option(`${i+1}: Fitness: ${population_temp[i].fitness}  - Positions: [${getPosVector(population[i].positions)}]`);
             }
             $('#population-select').val(($('#population-select option:first').val()));
         }

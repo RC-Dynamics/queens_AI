@@ -270,8 +270,8 @@ class GASettings {
         this.termination_select.id('termination-select');
         this.termination_select.attribute('size', '2');
         this.termination_select.parent(this.termination);
-        this.termination_select.option(_10000_evaluation);
         this.termination_select.option(_find_solution);
+        this.termination_select.option(_10000_evaluation);
         $('#termination-select').val(($('#termination-select option:first').val()));
 
         // Fitness Function
