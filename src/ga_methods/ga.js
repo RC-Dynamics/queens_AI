@@ -9,32 +9,49 @@ class GA {
     }
 
     radom_initialization(board_size, population_size){
-        return [
-            {
-                fitness: 10,
-                positions: [2, 4, 4, 6, 8, 6, 3, 2]
-            },
-            {
-                fitness: 11,
-                positions: [1, 2, 3, 4, 5, 6, 7, 8]
-            },
-            {
-                fitness: 10.5,
-                positions: [1, 1, 1, 1, 1, 1, 1, 1]
-            },
-            {
-                fitness: 2,
-                positions: [1, 7, 8, 2, 4, 5, 8, 6]
-            },
-            {
-                fitness: 30,
-                positions: [1, 3, 5, 7, 2, 4, 6, 8]
-            },
-            {
-                fitness: 30,
-                positions: [1, 3, 5, 7, 2, 4, 6, 8]
-            }
-        ]
+        var genomes = [];
+        var population = [];
+
+        for (var i = 0; i < board_size; i++) {
+            genomes.push(this.createBinaryString(i, Math.log2(board_size)));
+        }
+        for (var i = 0; i < population_size; i++) {
+            var genome = new Object();
+            genomes = this.randomShuffle(genomes);
+            genome.positions = genomes.slice();
+            population[i] = genome;
+        }
+        // return [
+        //     {
+        //         positions: [5, 2, 6, 1, 7, 4, 8, 3],
+        //         fitness: 1
+        //     }
+        // ]
+        return population;
+    }
+
+    createBinaryString(i, n_bits) {
+        var gene = "";
+        for (var j = n_bits - 1; j >= 0; j--) {
+            gene += String((i >>> (n_bits - 1)) % 2);
+            i <<= 1;
+        }
+        return gene;
+    }
+
+    randomShuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
     }
 
     parent_selection(population, board_size, parent_selection_method){
@@ -59,10 +76,10 @@ class GA {
         }
     }
 
-    evaluate_fitness(children, board_size, fitness){
+    evaluate_fitness(population, board_size, fitness){
         switch(fitness){
             case _inverse_num_clashes:
-                this.fitness_method.inverse_clashes(children, board_size);
+                this.fitness_method.inverse_clashes(population, board_size);
                 break;
         }
     }
