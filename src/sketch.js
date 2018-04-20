@@ -2,7 +2,7 @@ var chess_board;
 var population_list;
 var ga_settings;
 var ga;
-var isRunning = true;
+var isRunning = false;
 var config = {
   board_size: 8
 }
@@ -23,6 +23,9 @@ function setup() {
   // Change board size
   $('#board_size button').click(function () {
     config.board_size = parseInt($(this).text());
+
+    // Initialize a new population
+    initialize_population();
   });
 
   // Play button pressed
@@ -36,20 +39,14 @@ function setup() {
   // Restart button pressed
   // It will recalculate a new population
   $('#restart_button').click(function() {
-    // TODO
     // Initialize a new population
-    population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
-    ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
-    population_list.insert_population(population, isRunning);
+    initialize_population();
   });
 
   config.ga_settings = ga_settings.get_config();
   
-  // TODO
   // Initialize population
-  population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
-  ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
-  population_list.insert_population(population, isRunning);
+  initialize_population();
   isRunning = false;
 }
 

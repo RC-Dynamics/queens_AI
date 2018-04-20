@@ -26,3 +26,9 @@ function getPosVector(positions) {
 function getPos(genotype, pos) {
     return parseInt(genotype[pos], 2);
 }
+
+function initialize_population(){
+    population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
+    ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
+    population_list.insert_population(population, isRunning);
+}
