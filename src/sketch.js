@@ -67,7 +67,7 @@ function draw() {
     // Evaluate Fitness
     ga.evaluate_fitness(children, config.board_size, config.ga_settings.fitness);
     // Selection
-    ga.select_generation(population, children, config.board_size, config.ga_settings.selection);
+    population = ga.select_generation(population, children, config.board_size, config.ga_settings.selection);
     // Evaluate termination method
     if (ga.evaluate_termination(population, children.length, config.board_size, config.ga_settings.termination_method)){
       population_list.enable_changes();
