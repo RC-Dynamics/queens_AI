@@ -74,6 +74,7 @@ function draw() {
       ga_settings.enable_changes();
       isRunning = false;
     }
+    population_list.insert_population(population, isRunning);    
   }
 
 }
