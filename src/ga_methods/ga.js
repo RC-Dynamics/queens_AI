@@ -81,6 +81,12 @@ class GA {
             case _inverse_num_clashes:
                 this.fitness_method.inverse_clashes(population_t, board_size);
                 break;
+            case _parabolic_fitness:
+                this.fitness_method.parabolic_clashes(population_t, board_size);
+                break;
+            case _linear_fitness:
+                this.fitness_method.linear_clashes(population_t, board_size);
+                break;
         }
         population_t.sort(biggest_fitness);
         

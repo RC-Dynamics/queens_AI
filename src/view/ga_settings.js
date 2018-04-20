@@ -288,6 +288,8 @@ class GASettings {
         this.fitnes_select.attribute('size', '2');
         this.fitnes_select.parent(this.fitnes);
         this.fitnes_select.option(_inverse_num_clashes);
+        this.fitnes_select.option(_parabolic_fitness);
+        this.fitnes_select.option(_linear_fitness);
         $('#fitnes-select').val(($('#fitnes-select option:first').val()));
 
 
