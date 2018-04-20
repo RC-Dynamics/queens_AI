@@ -168,7 +168,7 @@ class GASettings {
         this.mutation_rate_label = createElement('h4', 'Mutation Rate:');
         this.mutation_rate_label.parent(this.mutation_rate);
 
-        this.mutation_rate_input = createInput('0.3');
+        this.mutation_rate_input = createInput('0.4');
         this.mutation_rate_input.parent(this.mutation_rate);
         this.mutation_rate_input.attribute('type', 'number');
         this.mutation_rate_input.attribute('step', '0.05');
