@@ -30,5 +30,8 @@ function getPos(genotype, pos) {
 function initialize_population(){
     population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
     ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
+    console.log(population[0]);
+    population.sort((a, b) => b.fitness - a.fitness);
+    console.log(population[0]);
     population_list.insert_population(population, isRunning);
 }
