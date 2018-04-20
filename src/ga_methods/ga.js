@@ -82,6 +82,8 @@ class GA {
                 this.fitness_method.inverse_clashes(population_t, board_size);
                 break;
         }
+        population.sort(biggest_fitness);
+        
     }
 
     select_generation(population_t, children, board_size, selection) {
