@@ -19,10 +19,10 @@ class PopulationList{
 
     insert_population(population_temp, isRunning){
         this.isRunning = isRunning;
-        if (this.isRunning){
+        if (!this.isRunning){
             $('#population-select').empty();
             for(var i = 0; i < population_temp.length; i++){
-                this.select.option(`${i+1}: Fitness: ${population_temp[i].fitness}  - Positions: [${getPosVector(population[i].positions)}]`);
+                this.select.option(`${i+1}: Fitness: ${population_temp[i].fitness.toFixed(3)}  - Positions: [${getPosVector(population[i].positions)}]`);
             }
             $('#population-select').val(($('#population-select option:first').val()));
         }
