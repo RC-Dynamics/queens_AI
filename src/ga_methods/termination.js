@@ -3,9 +3,7 @@ class Termination {
         this.count = 0;
     }
     find_solution(population_temp, board_size){
-        population_temp.sort(function (a, b) {
-            return a.fitness < b.fitness;
-        });
+        population_temp.sort(biggest_fitness);
         if(population_temp[0].fitness == 1){
             console.log("FOUND IT");
             return true;

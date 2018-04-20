@@ -14,16 +14,14 @@ class ParentSelection {
             };
         }
         five_choosen.sort(function (a, b) {
-            return a.genotype.fitness < b.genotype.fitness;
+            return b.genotype.fitness - a.genotype.fitness;
         });
         parents.push({
             first: five_choosen[0].index,
             second: five_choosen[1].index
         });
         // console.log(five_choosen);   
-        // population.sort(function (a, b) {
-        //     return a.fitness < b.fitness;
-        // });
+        // population.sort(biggest_fitness);
         // console.log(population[0]);
         return parents;
     }
