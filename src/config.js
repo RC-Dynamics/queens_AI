@@ -34,7 +34,7 @@ const biggest_fitness = (a, b) => b.fitness - a.fitness;
 
 function initialize_population(){
     $('#iteration-input').val(0);
-    ga.termination_method.clear_fitness_count();
+    ga.termination_method.clear_iterarion_and_count();
     config.ga_settings = ga_settings.get_config();
     population = ga.random_initialization(config.board_size, config.ga_settings.population_size);
     ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);

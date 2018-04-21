@@ -7,8 +7,6 @@ var config = {
   board_size: 8
 }
 
-var iteration = 0;
-
 var population;
 var parentsIndexes;
 var children;
@@ -95,7 +93,7 @@ function draw() {
       isRunning = false;
     }
     population_list.insert_population(population, isRunning);
-    $('#iteration-input').val(++iteration);
+    $('#iteration-input').val(ga.termination_method.get_fitness_count());
   }
 
 }

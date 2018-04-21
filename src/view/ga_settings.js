@@ -61,7 +61,7 @@ class GASettings {
         this.iteration_count = createDiv('');
         this.iteration_count.addClass('input-group');
         this.iteration_count.addClass('iteration-count');
-        this.iteration_count.attribute('title', 'Number of iterations');
+        this.iteration_count.attribute('title', 'Number of calculated fitness');
         this.iteration_count.attribute('type', 'text');
         this.iteration_count.parent(this.buttons);
         

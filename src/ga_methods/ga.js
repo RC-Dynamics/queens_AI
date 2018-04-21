@@ -101,7 +101,7 @@ class GA {
     evaluate_termination(population_t, num_calc_fit, board_size, termination){
         switch (termination) {
             case _find_solution:
-                return this.termination_method.find_solution(population_t, board_size);
+                return this.termination_method.find_solution(population_t, num_calc_fit, board_size);
             case _10000_evaluation:
                 return this.termination_method.fitness_evaluation(num_calc_fit, board_size, 1000);
         }
