@@ -21,12 +21,7 @@ class GA {
             genotype.positions = genotypes.slice();
             population_temp[i] = genotype;
         }
-        // return [
-        //     {
-        //         positions: [5, 2, 6, 1, 7, 4, 8, 3],
-        //         fitness: 1
-        //     }
-        // ]
+        this.evaluate_termination(population_temp, population_temp.length, board_size, _10000_evaluation);
         return population_temp;
     }
 
@@ -54,17 +49,17 @@ class GA {
         return array;
     }
 
-    parent_selection(population_t, board_size, parent_selection_method){
+    parent_selection(population_t, board_size, number_of_couples, parent_selection_method){
         switch (parent_selection_method) {
             case _two_of_five:
-                return this.select_parents_method.two_best_of_five(population_t, board_size);
+                return this.select_parents_method.two_best_of_five(population_t, board_size, number_of_couples);
         }
     }
 
-    crossover(population_t, parentsIndexes, board_size, number_of_chldren, crossover_method, crossover_rate){
+    crossover(population_t, parentsIndexes, board_size, crossover_method, crossover_rate){
         switch (crossover_method) {
             case _cut_crossfill:
-                return this.crossover_method.cut_and_crossfill(population_t, parentsIndexes, number_of_chldren, board_size, crossover_rate);
+                return this.crossover_method.cut_and_crossfill(population_t, parentsIndexes, board_size, crossover_rate);
         }
     }
 
@@ -101,12 +96,12 @@ class GA {
 
     }
 
-    evaluate_termination(population_t, calc_fitness, board_size, termination){
+    evaluate_termination(population_t, num_calc_fit, board_size, termination){
         switch (termination) {
             case _find_solution:
                 return this.termination_method.find_solution(population_t, board_size);
             case _10000_evaluation:
-                return this.termination_method.fitness_evaluation(calc_fitness, board_size, 10000);
+                return this.termination_method.fitness_evaluation(num_calc_fit, board_size, 10000);
         }
     }
     

@@ -13,12 +13,11 @@ class Termination {
     }
     fitness_evaluation(calc_fitness, board_size, max_evaluation){
         this.count += calc_fitness;
-        if(calc_fitness >= max_evaluation)
+        if(calc_fitness >= max_evaluation){
+            this.count = 0;
             return true;
+        }
         else
             return false;        
-    }
-    clearCount(){
-        this.count = 0;
     }
 }
