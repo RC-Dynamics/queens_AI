@@ -3,6 +3,18 @@
 
 ![](queens.png)
 
+## First part
+
+### Genotype representation
+
+Using a bit-string approach, we have the following representation:
+
+![](genotype.png)
+
+Each queen are initialized into a different column, so to reach the solution you only have to change the queens positions vertically by changing their lines.
+Thus each cell, in the figure above, represents a position on the vertical axis of the board, that is, represents the line where the queen should be positioned.
+
+
 ## Running local
 1 - `npm install -g browser-sync`
 
