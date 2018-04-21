@@ -33,14 +33,11 @@ Fitness determines how well is a solution given a genotype. So all solutions in 
 To determine the queen's collisions, each queen counts how many queens are on her's right diagonals. And the sum of each queen collision number is the *error* of a genotype. 
 
 There are three different **fitness functions** implemented:
-1. Exponential:
-> ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B1+error%7D)
 
-2. Parabolic:
-> ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B%28error-max_%7Berror%7D%29%5E2%7D%7Bmax_%7Berror%7D%7D)
+| <div style="text-align: center;">  Exponential </div> | <div style="text-align: center;">  Parabolic </div>| <div style="text-align: center;">  Linear </div>|
+| ------ | ------ | ------ |
+| ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B1+error%7D) |  ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B%28error-max_%7Berror%7D%29%5E2%7D%7Bmax_%7Berror%7D%7D) |  ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B-error%5E2%7D%7Bmax_%7Berror%7D%7D%2B1) |
 
-3. Linear: 
-> ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B-error%5E2%7D%7Bmax_%7Berror%7D%7D%2B1)
 
 These are the graphics for each **board size**:
 ![](figs/fitness_function.png)
