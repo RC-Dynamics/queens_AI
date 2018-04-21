@@ -10,7 +10,7 @@ class Termination {
         if(population_temp[0].fitness == 1){
             swal({
                 title: "Good job!",
-                text: "Solution calculated " + this.count + " fitness and had " + this.iteration + " iterarions!",
+                text: "Solution calculated " + this.count + " fitness and had " + this.iteration + " iterations!",
                 icon: "success",
                 button: "Ok!",
             });
@@ -26,7 +26,7 @@ class Termination {
         if(this.count >= max_evaluation){
             swal({
                 title: "Time is over!",
-                text: "Best solution fitness: " + population[0].fitness.toFixed(2) + " and " + this.iteration + " iterarions!",
+                text: "Best solution fitness: " + population[0].fitness.toFixed(2) + " and " + this.iteration + " iterations!",
                 icon: "warning",
                 button: "Ok!",
             });
