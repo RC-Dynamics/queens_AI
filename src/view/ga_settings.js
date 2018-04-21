@@ -321,7 +321,83 @@ class GASettings {
         this.fitnes_select.option(_linear_fitness);
         $('#fitnes-select').val(($('#fitnes-select option:first').val()));
 
+        // Saved configurations
+        this.saved_config = createDiv('');
+        this.saved_config.parent(this.right_col);
 
+        this.saved_config_label = createElement('h3', 'Saved configurations:');
+        this.saved_config_label.parent(this.saved_config);
+
+        this.saved_config_select = createSelect();
+        this.saved_config_select.addClass('form-control');
+        this.saved_config_select.addClass('select-info');
+        this.saved_config_select.id('saved-config-select');
+        this.saved_config_select.attribute('size', '2');
+        this.saved_config_select.parent(this.saved_config);
+        this.saved_config_select.option(_first_part);
+        this.saved_config_select.option(_best_config);
+        $('#saved-config-select').val(($('#saved-config-select option:first').val()));
+
+        $('#saved-config-select').change(() => {
+            switch ($("#saved-config-select").val()) {
+                case _first_part:
+                    $('#crossover-select').val(_cut_crossfill);
+                    $('#crossover-rate').val('0.9');
+                    $('#mutation-select').val(_gene_swap);
+                    $('#mutation-rate').val('0.4');
+                    $('#parent_selection-select').val(_two_of_five);
+                    $('#selection-select').val(_best_fitness);
+                    $('#population-size').val('100');
+                    $('#number-couples').val('1');
+                    $('#termination-select').val(_10000_evaluation);
+                    $('#fitnes-select').val(_inverse_num_clashes);
+                    break;
+                case _best_config:
+                    $('#crossover-select').val(_cut_crossfill);
+                    $('#crossover-rate').val('0.9');
+                    $('#mutation-select').val(_gene_swap);
+                    $('#mutation-rate').val('0.6');
+                    $('#parent_selection-select').val(_roulette_wheel_selection);
+                    $('#selection-select').val(_best_fitness);
+                    $('#population-size').val('100');
+                    $('#number-couples').val('50');
+                    $('#termination-select').val(_find_solution);
+                    $('#fitnes-select').val(_inverse_num_clashes);
+                    break;
+            }
+            // Initialize a new population
+            initialize_population();
+        });
+        $('#saved-config-select').click(() => {
+            switch ($("#saved-config-select").val()) {
+                case _first_part:
+                    $('#crossover-select').val(_cut_crossfill);
+                    $('#crossover-rate').val('0.9');
+                    $('#mutation-select').val(_gene_swap);
+                    $('#mutation-rate').val('0.4');
+                    $('#parent_selection-select').val(_two_of_five);
+                    $('#selection-select').val(_best_fitness);
+                    $('#population-size').val('100');
+                    $('#number-couples').val('1');
+                    $('#termination-select').val(_10000_evaluation);
+                    $('#fitnes-select').val(_inverse_num_clashes);
+                    break;
+                case _best_config:
+                    $('#crossover-select').val(_cut_crossfill);
+                    $('#crossover-rate').val('0.9');
+                    $('#mutation-select').val(_gene_swap);
+                    $('#mutation-rate').val('0.6');
+                    $('#parent_selection-select').val(_roulette_wheel_selection);
+                    $('#selection-select').val(_best_fitness);
+                    $('#population-size').val('100');
+                    $('#number-couples').val('50');
+                    $('#termination-select').val(_find_solution);
+                    $('#fitnes-select').val(_inverse_num_clashes);
+                    break;
+            }
+            // Initialize a new population
+            initialize_population();
+        });
     }
 
     get_config() {

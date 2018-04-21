@@ -17,6 +17,8 @@ const _parabolic_fitness = 'Parabolic fitness';
 const _best_fitness = 'Best Fitness';
 const _find_solution = 'Find the Solution';
 const _10000_evaluation = '10.000 Fitness evaluation';
+const _first_part = 'Initial Configuration';
+const _best_config = 'Best Configuration';
 
 function getPosVector(positions) {
     var pass = [];
