@@ -236,6 +236,7 @@ class GASettings {
         this.selection_select.attribute('size', '2');
         this.selection_select.parent(this.selection);
         this.selection_select.option(_best_fitness);
+        this.selection_select.option(_children_over_parents);
         $('#selection-select').val(($('#selection-select option:first').val()));
 
         // Population size

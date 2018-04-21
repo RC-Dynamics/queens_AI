@@ -15,6 +15,7 @@ const _inverse_num_clashes = 'Exponential fitness';
 const _linear_fitness = 'Linear fitness';
 const _parabolic_fitness = 'Parabolic fitness';
 const _best_fitness = 'Best Fitness';
+const _children_over_parents = 'Children over parents';
 const _find_solution = 'Find the Solution';
 const _10000_evaluation = '10.000 Fitness evaluation';
 const _first_part = 'Initial Configuration';

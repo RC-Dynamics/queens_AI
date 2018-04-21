@@ -88,11 +88,14 @@ class GA {
         population_t.sort(biggest_fitness);
         
     }
-
-    select_generation(population_t, children, board_size, selection) {
+    
+    select_generation(population_t, children, board_size, selection, parentsIndexes) {
         switch (selection) {
             case _best_fitness:
                 return this.selection_method.best_fitness(population_t, children, board_size);
+                break;
+            case _children_over_parents:
+                return this.selection_method.children_over_parents(population_t, children, board_size, parentsIndexes);
                 break;
         }
 

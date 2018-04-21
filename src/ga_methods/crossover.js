@@ -5,6 +5,7 @@ class Crossover {
     cut_and_crossfill(population_temp, parentsIndexes, board_size, crossover_rate){
         var children_temp = [];
         for(var i = 0; i < parentsIndexes.length; i++){
+			parentsIndexes[i].crossover = false;
             if (Math.random() < crossover_rate){
                 var father1 = population_temp[parentsIndexes[i].first].positions;
                 var father2 = population_temp[parentsIndexes[i].second].positions;
@@ -14,7 +15,8 @@ class Crossover {
                 });
                 children_temp.push({
                     positions: child[1]
-                });
+				});
+				parentsIndexes[i].crossover = true;
             }
         }
         // console.log(children_temp)
