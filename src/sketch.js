@@ -7,6 +7,8 @@ var config = {
   board_size: 8
 }
 
+var iteration = 0;
+
 var population;
 var parentsIndexes;
 var children;
@@ -33,7 +35,9 @@ function setup() {
     config.ga_settings = ga_settings.get_config();
     population_list.disable_changes();
     ga_settings.disable_changes();
+    $('#iteration-input').val(0);
     isRunning = true;
+    iteration = 0;
   });
   
   // Restart button pressed
@@ -41,6 +45,7 @@ function setup() {
   $('#restart_button').click(function() {
     // Initialize a new population
     initialize_population();
+    $('#iteration-input').val(0);
   });
 
   config.ga_settings = ga_settings.get_config();
@@ -69,12 +74,14 @@ function draw() {
     // Selection
     population = ga.select_generation(population, children, config.board_size, config.ga_settings.selection);
     // Evaluate termination method
-    if (ga.evaluate_termination(population, children.length, config.board_size, config.ga_settings.termination_method)){
+    if (ga.evaluate_termination(population, children.length, config.board_size, config.ga_settings.termination_method)) {
       population_list.enable_changes();
       ga_settings.enable_changes();
       isRunning = false;
+      alert("FOUND IT");
     }
-    population_list.insert_population(population, isRunning);    
+    population_list.insert_population(population, isRunning);
+    $('#iteration-input').val(++iteration);
   }
 
 }

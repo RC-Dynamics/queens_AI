@@ -2,6 +2,7 @@
     margin-left: 10px;
     margin-bottom: 10px;
     margin: 5px 0px 10px 10px;
+    float: left;
 }
 
 .new-line-div{
@@ -41,4 +42,22 @@ h4{
 
 .configuration {
     min-width: 600px;    
+}
+
+.iteration-count {
+    min-height: 70px;
+    padding: 5px 0px 20px 30px;
+}
+
+#iteration-input {
+    min-height: 45px;
+    text-align: right;
+}
+
+.buttons-div {
+    height: 70px;
+}
+
+.span-iteration{
+    font-size: 20px;
 }

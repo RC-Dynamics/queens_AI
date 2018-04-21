@@ -5,7 +5,6 @@ class Termination {
     find_solution(population_temp, board_size){
         population_temp.sort(biggest_fitness);
         if(population_temp[0].fitness == 1){
-            console.log("FOUND IT");
             return true;
         }
         else{

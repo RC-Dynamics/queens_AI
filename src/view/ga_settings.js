@@ -18,38 +18,66 @@ class GASettings {
         this.right_col = createDiv('');
         this.right_col.parent(this.div);
         this.right_col.addClass('div-col');
+
+        // Buttons div
+        this.buttons = createDiv('');
+        this.buttons.parent(this.left_col);
+        this.buttons.addClass('buttons-div');
         
         // Play and restart button
         this.control_buttons = createDiv('');
         this.control_buttons.addClass('btn-group');
         this.control_buttons.addClass('button-config');
         this.control_buttons.id('control-buttons');
-        this.control_buttons.parent(this.left_col);
+        this.control_buttons.parent(this.buttons);
         
         this.playButton = createButton('');
         this.playButton.addClass('btn');
         this.playButton.addClass('btn-lg');
         this.playButton.addClass('btn-default');
+        this.playButton.attribute('title', 'Start Algorithm');
         this.playButton.id('play_button');
         this.playButton.parent(this.control_buttons);
-
+        
         this.playButtonIcon = createSpan('');
         this.playButtonIcon.addClass('glyphicon');
         this.playButtonIcon.addClass('glyphicon-play');
         this.playButtonIcon.parent(this.playButton);
-
+        
         this.restartButton = createButton('');
         this.restartButton.addClass('btn-lg');
         this.restartButton.addClass('btn');
         this.restartButton.addClass('btn-default');
+        this.restartButton.attribute('title', 'Initialize population');
         this.restartButton.id('restart_button');
         this.restartButton.parent(this.control_buttons);
-
+        
         this.restartButtonIcon = createSpan('');
         this.restartButtonIcon.addClass('glyphicon');
-        this.restartButtonIcon.addClass('glyphicon-repeat');
+        this.restartButtonIcon.addClass('glyphicon-refresh');
         this.restartButtonIcon.parent(this.restartButton);
-
+        
+        // Iteration Count
+        this.iteration_count = createDiv('');
+        this.iteration_count.addClass('input-group');
+        this.iteration_count.addClass('iteration-count');
+        this.iteration_count.attribute('title', 'Number of iterations');
+        this.iteration_count.attribute('type', 'text');
+        this.iteration_count.parent(this.buttons);
+        
+        this.iteration_icon = createSpan('#');
+        // this.iteration_icon.addClass('glyphicon');
+        // this.iteration_icon.addClass('glyphicon-restart');
+        this.iteration_icon.addClass('input-group-addon');
+        this.iteration_icon.addClass('span-iteration');
+        this.iteration_icon.parent(this.iteration_count);
+        
+        this.iteration_number = createInput('0');
+        this.iteration_number.attribute('disabled', 'true');
+        this.iteration_number.addClass('form-control');
+        this.iteration_number.id('iteration-input');
+        this.iteration_number.parent(this.iteration_count);
+        
         // Board size
         this.board_size = createDiv('');
         this.board_size.parent(this.left_col);
