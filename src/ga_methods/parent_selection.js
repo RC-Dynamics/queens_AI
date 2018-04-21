@@ -24,4 +24,37 @@ class ParentSelection {
         }
         return couples;
     }
+
+    find_parent_roulette(array, n){
+        for (var i = 0; i < array.length; i++) {
+            if(n < array[i]) return i;
+        }
+    }
+
+    roulette_wheel_selection(population_temp, board_size, number_of_couples){
+        var fitness_sum = 0;;
+        var probability = [];
+        var partial_sum = 0;
+        var couples = [];
+
+        // Sum over all fitness
+        population_temp.forEach(element => {
+            fitness_sum += element.fitness;
+        });
+
+        // Give a probability to every genome
+        population_temp.forEach(element => {
+            partial_sum += (element.fitness / fitness_sum);
+            probability.push(partial_sum);
+        });
+
+        for (var i = 0; i < number_of_couples; i++) {
+            couples.push({
+                first: this.find_parent_roulette(probability, Math.random()),
+                second: this.find_parent_roulette(probability, Math.random())
+            });
+        }
+
+        return couples;
+    }
 }

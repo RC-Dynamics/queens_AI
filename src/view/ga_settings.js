@@ -155,10 +155,10 @@ class GASettings {
         
         this.crossover_rate = createDiv('');
         this.crossover_rate.parent(this.crossover);
-
+        
         this.crossover_rate_label = createElement('h4', 'Crossover Rate:');
         this.crossover_rate_label.parent(this.crossover_rate);
-
+        
         this.crossover_rate_input = createInput('0.9');
         this.crossover_rate_input.parent(this.crossover_rate);
         this.crossover_rate_input.attribute('type', 'number');
@@ -167,20 +167,20 @@ class GASettings {
         this.crossover_rate_input.attribute('max', '1');
         this.crossover_rate_input.id('crossover-rate');
         this.crossover_rate_input.addClass('form-control');
-
+        
         // Mutation
         this.mutation = createDiv('');
         this.mutation.parent(this.left_col);
-
+        
         this.mutation_label = createElement('h3', 'Mutation:');
         this.mutation_label.parent(this.mutation);
-
+        
         this.mutation_method = createDiv('');
         this.mutation_method.parent(this.mutation);
-
+        
         this.mutation_method_label = createElement('h4', 'Mutation Method:');
         this.mutation_method_label.parent(this.mutation_method);
-
+        
         this.mutation_select = createSelect();
         this.mutation_select.addClass('form-control');
         this.mutation_select.addClass('select-info');
@@ -189,13 +189,13 @@ class GASettings {
         this.mutation_select.parent(this.mutation_method);
         this.mutation_select.option(_gene_swap);
         $('#mutation-select').val(($('#mutation-select option:first').val()));
-
+        
         this.mutation_rate = createDiv('');
         this.mutation_rate.parent(this.mutation);
-
+        
         this.mutation_rate_label = createElement('h4', 'Mutation Rate:');
         this.mutation_rate_label.parent(this.mutation_rate);
-
+        
         this.mutation_rate_input = createInput('0.4');
         this.mutation_rate_input.parent(this.mutation_rate);
         this.mutation_rate_input.attribute('type', 'number');
@@ -204,14 +204,14 @@ class GASettings {
         this.mutation_rate_input.attribute('max', '1');
         this.mutation_rate_input.id('mutation-rate');
         this.mutation_rate_input.addClass('form-control');
-
+        
         // Parent Selection
         this.parent_selection = createDiv('');
         this.parent_selection.parent(this.left_col);
-
+        
         this.parent_selection_label = createElement('h3', 'Parent Selection:');
         this.parent_selection_label.parent(this.parent_selection);
-
+        
         this.parent_selection_select = createSelect();
         this.parent_selection_select.addClass('form-control');
         this.parent_selection_select.addClass('select-info');
@@ -219,6 +219,7 @@ class GASettings {
         this.parent_selection_select.attribute('size', '2');
         this.parent_selection_select.parent(this.parent_selection);
         this.parent_selection_select.option(_two_of_five);
+        this.parent_selection_select.option(_roulette_wheel_selection);
         $('#parent_selection-select').val(($('#parent_selection-select option:first').val()));
 
         // Selction Method

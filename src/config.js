@@ -8,6 +8,7 @@ const offset = 20;
 
 // Settings labels
 const _two_of_five = '2 best of 5 random';
+const _roulette_wheel_selection = 'Roulette wheel selection';
 const _cut_crossfill = 'Cut-and-crossfill';
 const _gene_swap = 'Gene Swapping';
 const _inverse_num_clashes = 'Exponential fitness';

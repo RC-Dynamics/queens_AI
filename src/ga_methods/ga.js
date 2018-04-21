@@ -53,6 +53,8 @@ class GA {
         switch (parent_selection_method) {
             case _two_of_five:
                 return this.select_parents_method.two_best_of_five(population_t, board_size, number_of_couples);
+            case _roulette_wheel_selection:
+                return this.select_parents_method.roulette_wheel_selection(population_t, board_size, number_of_couples);
         }
     }
 
