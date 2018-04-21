@@ -8,7 +8,7 @@ class GA {
         this.termination_method = new Termination();
     }
 
-    radom_initialization(board_size, population_size){
+    random_initialization(board_size, population_size){
         var genotypes = [];
         var population_temp = [];
 
@@ -103,7 +103,7 @@ class GA {
             case _find_solution:
                 return this.termination_method.find_solution(population_t, board_size);
             case _10000_evaluation:
-                return this.termination_method.fitness_evaluation(num_calc_fit, board_size, 10000);
+                return this.termination_method.fitness_evaluation(num_calc_fit, board_size, 1000);
         }
     }
     
