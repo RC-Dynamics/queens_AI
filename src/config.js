@@ -34,8 +34,31 @@ const biggest_fitness = (a, b) => b.fitness - a.fitness;
 
 function initialize_population(){
     $('#iteration-input').val(0);
+    ga.termination_method.clear_fitness_count();
     config.ga_settings = ga_settings.get_config();
-    population = ga.radom_initialization(config.board_size, config.ga_settings.population_size);
+    population = ga.random_initialization(config.board_size, config.ga_settings.population_size);
     ga.evaluate_fitness(population, config.board_size, config.ga_settings.fitness);
     population_list.insert_population(population, isRunning);
+}
+
+function finishingAlert(){
+    swal({
+        title: "We are Done!",
+        text: "Shall we run again?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Let's Go!",
+        cancelButtonText: "I'am not sure!",
+        closeOnConfirm: false,
+        closeOnCancel: false
+    },
+        function (isConfirm) {
+            if (isConfirm) {
+                swal("Account Removed!", "Your account is removed permanently!", "success");
+            }
+            else {
+                swal("Hurray", "Account is not removed!", "error");
+            }
+        });
 }

@@ -93,7 +93,6 @@ function draw() {
       population_list.enable_changes();
       ga_settings.enable_changes();
       isRunning = false;
-      alert("FOUND IT");
     }
     population_list.insert_population(population, isRunning);
     $('#iteration-input').val(++iteration);
