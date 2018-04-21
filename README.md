@@ -7,7 +7,8 @@
 ![](figs/queens.png)
 
 ## n Queens Puzzle
-These applications resolve the * queen's puzzle* to different **board sizes** (8x8, 16x16, 32x32 and 64x64). Remember that the * queen's puzzle* is an exponential problem.
+
+These applications resolve the *queen's puzzle* to different **board sizes** (8x8, 16x16, 32x32 and 64x64). Remember that the *queen's puzzle* is an exponential problem.
 
 
 
@@ -32,9 +33,14 @@ Fitness determines how well is a solution given a genotype. So all solutions in 
 To determine the queen's collisions, each queen counts how many queens are on her's right diagonals. And the sum of each queen collision number is the *error* of a genotype. 
 
 There are three different **fitness functions** implemented:
->1. Exponential:   1 / (1 + *error);
->2. Parabolic:  (x-max_error)^2 / max_error^2; 
->2. Linear:  -(*error*/max_error) + 1;
+1. Exponential:
+> ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B1+error%7D)
+
+2. Parabolic:
+> ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B%28error-max_%7Berror%7D%29%5E2%7D%7Bmax_%7Berror%7D%7D)
+
+3. Linear: 
+> ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B-error%5E2%7D%7Bmax_%7Berror%7D%7D%2B1)
 
 These are the graphics for each **board size**:
 ![](figs/fitness_function.png)
@@ -77,6 +83,7 @@ There are two methods of ending the algorithm:
 2. **Evaluating 10.000** times the fitness. 
 
 </div>
+
 ## Running local
 
 1. First, you need to have [npm](https://www.npmjs.com) installed.
@@ -84,3 +91,6 @@ There are two methods of ending the algorithm:
 3. On the project folder run: `browser-sync start --server -f .`
 
 or you can [Running a local server](https://github.com/processing/p5.js/wiki/Local-server)
+
+
+> Authors: [Roberto Fernandes](https://github.com/bebetocf), [Lucas Cavalcanti](https://github.com/lhcavalcanti), [Carlos Pena](https://github.com/CarlosPena00), [Cristiano Santos](https://github.com/cstiano).
