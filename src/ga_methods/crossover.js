@@ -2,7 +2,7 @@ class Crossover {
     constructor() {
 
     }
-    cut_and_crossfill(population_temp, parentsIndexes, number_of_chldren, board_size, crossover_rate){
+    cut_and_crossfill(population_temp, parentsIndexes, board_size, crossover_rate){
         var children_temp = [];
         for(var i = 0; i < parentsIndexes.length; i++){
             if (Math.random() < crossover_rate){

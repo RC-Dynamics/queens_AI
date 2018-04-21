@@ -253,21 +253,21 @@ class GASettings {
         this.population_size_input.addClass('form-control');
         this.population_size_input.id('population-size');
 
-        // Number of children
-        this.children = createDiv('');
-        this.children.parent(this.right_col);
+        // Number of couples
+        this.couples = createDiv('');
+        this.couples.parent(this.right_col);
 
-        this.children_label = createElement('h3', 'Number of children:');
-        this.children_label.parent(this.children);
+        this.couples_label = createElement('h3', 'Number of couples:');
+        this.couples_label.parent(this.couples);
 
-        this.children_size_input = createInput('2');
-        this.children_size_input.parent(this.children);
-        this.children_size_input.attribute('type', 'number');
-        this.children_size_input.attribute('step', '1');
-        this.children_size_input.attribute('min', '0');
-        this.children_size_input.attribute('max', '10');
-        this.children_size_input.addClass('form-control');
-        this.children_size_input.id('number-children');
+        this.couples_size_input = createInput('1');
+        this.couples_size_input.parent(this.couples);
+        this.couples_size_input.attribute('type', 'number');
+        this.couples_size_input.attribute('step', '1');
+        this.couples_size_input.attribute('min', '0');
+        this.couples_size_input.attribute('max', '10');
+        this.couples_size_input.addClass('form-control');
+        this.couples_size_input.id('number-couples');
 
         // Initialization
         this.initialization = createDiv('');
@@ -333,7 +333,7 @@ class GASettings {
             parent_selection: $('#parent_selection-select').val(),
             selection: $('#selection-select').val(),
             population_size: parseInt($('#population-size').val()),
-            number_of_children: parseInt($('#number-children').val()),
+            number_of_couples: parseInt($('#number-couples').val()),
             initialization: $('#initialization-select').val(),
             termination_method: $('#termination-select').val(),
             fitness: $('#fitnes-select').val()
@@ -349,7 +349,7 @@ class GASettings {
         $('#parent_selection-select').prop('disabled', true);
         $('#selection-select').prop('disabled', true);
         $('#population-size').prop('disabled', true);
-        $('#number-children').prop('disabled', true);
+        $('#number-couples').prop('disabled', true);
         $('#initialization-select').prop('disabled', true);
         $('#termination-select').prop('disabled', true);
         $('#fitnes-select').prop('disabled', true);
@@ -366,7 +366,7 @@ class GASettings {
         $('#parent_selection-select').prop('disabled', false);
         $('#selection-select').prop('disabled', false);
         $('#population-size').prop('disabled', false);
-        $('#number-children').prop('disabled', false);
+        $('#number-couples').prop('disabled', false);
         $('#initialization-select').prop('disabled', false);
         $('#termination-select').prop('disabled', false);
         $('#fitnes-select').prop('disabled', false);
