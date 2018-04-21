@@ -36,6 +36,9 @@ There are three different **fitness functions** implemented:
 >2. Parabolic:  (x-max_error)^2 / max_error^2; 
 >2. Linear:  -(*error*/max_error) + 1;
 
+These are the graphics for eachs **board size**:
+![](figs/fitness_function.png)
+
 ###  Parent Selection
 The first parent selection method is the **two best of five**; this approach consists in getting five randoms fathers in the population. After, the best two genotype (mensured by fitness) among the five are choosen to reproduce. 
 Another method is **roulette wheel**, which every genotype has a chance to be selected proportional to its fitness.
