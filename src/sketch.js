@@ -45,7 +45,22 @@ function setup() {
   $('#restart_button').click(function() {
     // Initialize a new population
     initialize_population();
-    $('#iteration-input').val(0);
+  });
+  
+  // Change Fitness function
+  // It will recalculate a new population
+  $('#fitnes-select').change(() => {
+    // Initialize a new population
+    initialize_population();
+
+  });
+
+  // Change population size
+  // It will recalculate a new population
+  $('#population-size').change(() => {
+    // Initialize a new population
+    initialize_population();
+
   });
 
   config.ga_settings = ga_settings.get_config();
