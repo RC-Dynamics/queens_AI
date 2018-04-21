@@ -1,13 +1,13 @@
 # [Queens AI](https://rc-dynamics.github.io/queens_AI/)
-> The [n Queens Pluzze](https://en.wikipedia.org/wiki/Eight_queens_puzzle) resolved with genetic algorithms.
+> The [n Queens Puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle) resolved with genetic algorithms.
 
 > [Check out our application using Genetic Algoritmh on a web site](https://rc-dynamics.github.io/queens_AI/)
 
 
 ![](figs/queens.png)
 
-## n Queens Pluzze
-These application resolve the *queens pluzze* to different **board sizes** (8x8, 16x16, 32x32 and 64x64). Remember that the *queens pluzze* is a exponential problem.
+## n Queens Puzzle
+These application resolve the *queens puzzle* to different **board sizes** (8x8, 16x16, 32x32 and 64x64). Remember that the *queens puzzle* is a exponential problem.
 
 
 
