@@ -36,8 +36,7 @@ There are three different **fitness functions** implemented:
 
 | <div style="text-align: center;">  Exponential </div> | <div style="text-align: center;">  Parabolic </div>| <div style="text-align: center;">  Linear </div>|
 | ------ | ------ | ------ |
-| ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B1+error%7D) |  ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B%28error-max_%7Berror%7D%29%5E2%7D%7Bmax_%7Berror%7D%7D) |  ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B-error%5E2%7D%7Bmax_%7Berror%7D%7D%2B1) |
-
+| ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B1%7D%7B1+error%7D) |  ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B%28error-max_%7Berror%7D%29%5E2%7D%7B%28max_%7Berror%7D%29%5E2%7D) |  ![](http://latex.codecogs.com/svg.latex?%5Cfrac%7B-error%7D%7Bmax_%7Berror%7D%7D%2B1) |
 
 These are the graphics for each **board size**:
 ![](figs/fitness_function.png)
@@ -78,6 +77,23 @@ There are two methods of ending the algorithm:
 1. **Finding correct solutions**, where no queen can collide with other.
 
 2. **Evaluating 10.000** times the fitness. 
+
+### Results of Testing
+Our test on 8x8 board using three differently **functions of fitness**, and comparing **number of calculated fitness** and **nuber of iterations** resulted in this graphic below.
+
+| <div style="text-align: center;">  Number of Fitness </div> | <div style="text-align: center;">  Number of Iterations </div>|
+| ------ | ------ |
+| ![](figs/fitnessComparison.png) |  ![](figs/iterationsComparison.png) |
+
+
+The configuration of the algorithm used to generate the upper graphic were:
+1. Population: **100** genotypes **randomly initialized**.
+2. Crossover rate: **0.9**
+3. Mutation rate: **0.4**
+4. Parent Selection: **2 best of 5.**
+5. Number of Couples: **1**
+6. Selection: **Best fitness**
+
 
 </div>
 
