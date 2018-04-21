@@ -78,21 +78,27 @@ There are two methods of ending the algorithm:
 
 2. **Evaluating 10.000** times the fitness. 
 
-### Results of Testing
-Our test on 8x8 board using three differently **functions of fitness**, and comparing **number of calculated fitness** and **nuber of iterations** resulted in this graphic below.
-
-| <div style="text-align: center;">  Number of Fitness </div> | <div style="text-align: center;">  Number of Iterations </div>|
-| ------ | ------ |
-| ![](figs/fitnessComparison.png) |  ![](figs/iterationsComparison.png) |
-
-
-The configuration of the algorithm used to generate the upper graphic were:
+### Analysing Results
+We performed tests in 8x8 board with the basic configuration below.
 1. Population: **100** genotypes **randomly initialized**.
 2. Crossover rate: **0.9**
 3. Mutation rate: **0.4**
 4. Parent Selection: **2 best of 5.**
 5. Number of Couples: **1**
 6. Selection: **Best fitness**
+
+Our first test used three different **functions of fitness**, and compared  **number of calculated fitness** and **nuber of iterations**, that resulted in this graphic 1 below.
+
+| <div style="text-align: center;">  Number of Fitness </div> | <div style="text-align: center;">  Number of Iterations </div>|
+| ------ | ------ |
+| ![](figs/fitnessComparison.png) |  ![](figs/iterationsComparison.png) |
+
+
+Our second test used five different **number of couples**, and compared  **number of calculated fitness** and **nuber of iterations**. The analyze resulted in this graphic 2 below.
+
+| <div style="text-align: center;">  Number of Fitness </div> | <div style="text-align: center;">  Number of Iterations </div>|
+| ------ | ------ |
+| ![](figs/fitnessSeveralCouplesComp.png) |  ![](figs/iterationsSeveralCouplesComp.png) |
 
 
 </div>
