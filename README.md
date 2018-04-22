@@ -75,7 +75,6 @@ Another way is **generational**, for that, after a father passes through the cro
 ### Termination 
 There are two methods of ending the algorithm:
 1. **Finding correct solutions**, where no queen can collide with other.
-
 2. **Evaluating 10.000** times the fitness. 
 
 ### Analysing Results
