@@ -433,6 +433,7 @@ class GASettings {
         $('#fitnes-select').prop('disabled', true);
         $('#board_size button').prop('disabled', true);
         $('#control-buttons button').prop('disabled', true);
+        $('#saved-config-select').prop('disabled', true);
     }
 
     enable_changes() {
@@ -450,5 +451,6 @@ class GASettings {
         $('#fitnes-select').prop('disabled', false);
         $('#board_size button').prop('disabled', false);
         $('#control-buttons button').prop('disabled', false);
+        $('#saved-config-select').prop('disabled', false);
     }
 }
