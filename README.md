@@ -1,5 +1,5 @@
 # [Queens AI](https://rc-dynamics.github.io/queens_AI/)
-> The [n Queens Pluzze](https://en.wikipedia.org/wiki/Eight_queens_puzzle) resolved with genetic algorithms.
+> The [n Queens Pluzze](https://en.wikipedia.org/wiki/Eight_queens_puzzle) resolved with [genetic algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm).
 
 > [Check out our application using Genetic Algorithm on a web site](https://rc-dynamics.github.io/queens_AI/)
 
@@ -86,14 +86,14 @@ We performed tests in 8x8 board with the basic configuration below.
 5. Number of Couples: **1**
 6. Selection: **Best fitness**
 
-Our first test used three different **functions of fitness**, and compared  **number of calculated fitness** and **nuber of iterations**, that resulted in this graphic 1 below.
+Our first test used three different **functions of fitness**, and compared  **number of calculated fitness** and **number of iterations**, that resulted in this graphic 1 below.
 
 | <div style="text-align: center;">  Number of Fitness </div> | <div style="text-align: center;">  Number of Iterations </div>|
 | ------ | ------ |
 | ![](figs/fitnessComparison.png) |  ![](figs/iterationsComparison.png) |
 
 
-Our second test used five different **number of couples**, and compared  **number of calculated fitness** and **nuber of iterations**. The analyze resulted in this graphic 2 below.
+Our second test used five different **number of couples**, and compared  **number of calculated fitness** and **number of iterations**. The analyze resulted in this graphic 2 below.
 
 | <div style="text-align: center;">  Number of Fitness </div> | <div style="text-align: center;">  Number of Iterations </div>|
 | ------ | ------ |
