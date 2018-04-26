@@ -112,6 +112,10 @@ Our second test used five different **number of couples**, and compared  **numbe
 | ------ | ------ |
 | ![](figs/lin_oneall_80.png) |  ![](figs/lin_oneall_450.png) |
 
+| <div style="text-align: center;">  Best configuration comparison individual and all population, 80 iterations</div> |
+| ------ | 
+| ![](figs/bestconfig_oneall.png) |
+
 </div>
 
 ## Running local
