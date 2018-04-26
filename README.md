@@ -99,6 +99,18 @@ Our second test used five different **number of couples**, and compared  **numbe
 | ------ | ------ |
 | ![](figs/fitnessSeveralCouplesComp.png) |  ![](figs/iterationsSeveralCouplesComp.png) |
 
+| <div style="text-align: center;">  Exponencial best individual and all population sample 1</div> | <div style="text-align: center;">  Exponencial best individual and all population sample 2 </div>|
+| ------ | ------ |
+| ![](figs/expo_one_all.png) |  ![](figs/expo_oneall_120.png) |
+
+
+| <div style="text-align: center;">  Parabolic best individual and all population sample 1</div> | <div style="text-align: center;">  Parabolic best individual and all population sample 2 </div>|
+| ------ | ------ |
+| ![](figs/para_oneall_90.png) |  ![](figs/para_oneall_1200.png) |
+
+| <div style="text-align: center;">  Linear best individual and all population sample 1</div> | <div style="text-align: center;">  Linear best individual and all population sample 2 </div>|
+| ------ | ------ |
+| ![](figs/lin_oneall_80.png) |  ![](figs/para_oneall_450.png) |
 
 </div>
 
