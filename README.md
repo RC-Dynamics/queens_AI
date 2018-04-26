@@ -110,7 +110,7 @@ Our second test used five different **number of couples**, and compared  **numbe
 
 | <div style="text-align: center;">  Linear best individual and all population, 80 iterations</div> | <div style="text-align: center;">  Linear best individual and all population, 450 iterations </div>|
 | ------ | ------ |
-| ![](figs/lin_oneall_80.png) |  ![](figs/para_oneall_450.png) |
+| ![](figs/lin_oneall_80.png) |  ![](figs/lin_oneall_450.png) |
 
 </div>
 
